@@ -1,0 +1,16 @@
+{
+  "name": "Pocket Bestiary",
+  "short_name": "Bestiary",
+  "description": "Le schede dei mostri di D&D 5e, 2014 e 2024: stile manuale o a carte, GS da cambiare con un tocco, mostri homebrew.",
+  "lang": "it",
+  "start_url": "./#bestiario",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1a1612",
+  "theme_color": "#1a1612",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

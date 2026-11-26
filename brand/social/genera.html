@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<base href="/">
+<title>Pocket Bestiary · immagini social</title>
+<!-- Pagina di servizio: compone le immagini per i social con le carte vere dell'app.
+     Si apre con ?f=og | post | post-carte | storia | facebook | x | youtube | linkedin | profilo | pinterest
+     e si fotografa alla misura del formato (vedi genera.sh). -->
+<link rel="stylesheet" href="css/caratteri.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/schede.css">
+<style>
+  :root { --verde: #4f7a3c; --verde-chiaro: #8fb86f; --inchiostro: #14110d; --carta: #f6efe8; }
+  html, body { margin: 0; width: var(--W); height: var(--H); overflow: hidden; background: var(--inchiostro); }
+  .tela { position: relative; width: var(--W); height: var(--H); overflow: hidden; color: var(--carta); font-family: Figtree, sans-serif;
+    background: radial-gradient(90% 70% at 78% 40%, #2c3a1f 0%, transparent 60%), radial-gradient(60% 60% at 10% 100%, #1f2a16 0%, transparent 70%), var(--inchiostro); }
+  .grana { position: absolute; inset: 0; opacity: .08; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); mix-blend-mode: overlay; }
+  .marchio-s { display: flex; align-items: center; gap: calc(var(--u) * .5); font-family: Gloock, Georgia, serif; font-size: calc(var(--u) * 1.15); }
+  .marchio-s svg { width: calc(var(--u) * 1.5); height: calc(var(--u) * 1.5); fill: var(--verde-chiaro); }
+  h1 { font-family: Gloock, Georgia, serif; font-weight: 400; letter-spacing: -.02em; line-height: .98; margin: 0; font-size: calc(var(--u) * 3.1); text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--verde-chiaro); }
+  .sotto { font-size: calc(var(--u) * .95); line-height: 1.35; color: #d9d2c4; max-width: 30ch; margin: calc(var(--u) * .7) 0 0; }
+  .pillole { display: flex; flex-wrap: wrap; gap: calc(var(--u) * .35); margin-top: calc(var(--u) * .9); }
+  .pillole span { border-radius: 999px; padding: calc(var(--u) * .22) calc(var(--u) * .6); background: rgba(246,239,232,.1); font-weight: 600; font-size: calc(var(--u) * .62); }
+  .url { font-weight: 700; font-size: calc(var(--u) * .62); color: var(--verde-chiaro); }
+  .mazzo { position: absolute; display: flex; }
+  .mazzo .carta { position: absolute; transform-origin: 50% 100%; box-shadow: inset 0 0 0 1.6mm var(--cornice), 0 30px 60px -20px rgba(0,0,0,.8) !important; }
+  .belva { position: absolute; mix-blend-mode: screen; filter: grayscale(1) brightness(1.18) contrast(1.35) invert(1); opacity: .85; }
+  .testo { position: absolute; }
+  /* profilo */
+  .profilo { display: grid; place-items: center; background: var(--verde); }
+  .profilo svg { width: calc(var(--W) * .62); height: calc(var(--W) * .62); fill: var(--carta); }
+</style>
+</head>
+<body>
+<div class="tela" id="tela"><div class="grana"></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <mask id="pb-p" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48"><rect width="48" height="48" fill="#fff"/><path d="M8.5 16h31v18.8q0 7.7-7.7 7.7H16.2q-7.7 0-7.7-7.7z" stroke="#000" stroke-width="2.8" stroke-linejoin="round"/></mask>
+  <mask id="pb-c" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48"><rect width="48" height="48" fill="#fff"/><path d="M12.4 19.9h23.2v14.6q0 4.1-4.1 4.1h-15q-4.1 0-4.1-4.1z" fill="none" stroke="#000" stroke-width="1.4" stroke-dasharray="2.3 1.9" stroke-linecap="round"/></mask>
+  <symbol id="segno" viewBox="0 0 48 48"><g mask="url(#pb-p)"><path d="M10.5 19 C10.5 10.5 13.5 5.5 19 6.7 C15.7 8.5 15.1 12.5 16.5 19z"/><path d="M19.5 19 C19.5 8.2 22.5 3.2 28 4.4 C24.7 6.2 24.1 10.2 25.5 19z"/><path d="M28.5 19 C28.5 10.5 31.5 5.5 37 6.7 C33.7 8.5 33.1 12.5 34.5 19z"/></g><path mask="url(#pb-c)" d="M8.5 16h31v18.8q0 7.7-7.7 7.7H16.2q-7.7 0-7.7-7.7z"/></symbol>
+</defs></svg>
+<script src="js/testi.js"></script>
+<script src="js/gs.js"></script>
+<script src="js/dati.js"></script>
+<script src="js/immagini.js"></script>
+<script src="js/schede.js"></script>
+<script>
+(async () => {
+  const F = {
+    og:        [1200, 630],  post: [1080, 1080], 'post-carte': [1080, 1080], storia: [1080, 1920],
+    facebook:  [1640, 624],  x: [1500, 500],      youtube: [2560, 1440],     linkedin: [1584, 396],
+    profilo:   [1080, 1080], pinterest: [1000, 1500],
+  };
+  const f = new URLSearchParams(location.search).get('f') || 'og';
+  const [W, H] = F[f];
+  const u = f === 'youtube' ? 40 : Math.min(W, H * 1.6) / 28;                 // unità tipografica
+  document.documentElement.style.cssText = '--W:' + W + 'px;--H:' + H + 'px;--u:' + u + 'px';
+  const tela = document.getElementById('tela');
+  // I testi lunghi vanno via dal backtick per tenere le virgolette leggibili
+  const SLOGAN = 'Tutti i mostri, <em>in tasca.</em>';
+  const SOTTO = 'Le schede dei mostri di D&D 5e, 2014 e 2024: stile manuale o carte da stampare, GS che cambia con un tocco, i tuoi homebrew.';
+  const marchio = '<div class="marchio-s"><svg viewBox="0 0 48 48"><use href="#segno"/></svg>Pocket Bestiary</div>';
+  const pillole = '<div class="pillole"><span>653 mostri SRD</span><span>2014 e 2024</span><span>Cambio GS</span><span>Carte da stampare</span><span>Gratis</span></div>';
+
+  if (f === 'profilo') { tela.className = 'tela profilo'; tela.innerHTML = "<svg style=\"width:62%;height:62%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\"><defs><mask id=\"p\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"48\" height=\"48\"><rect width=\"48\" height=\"48\" fill=\"#fff\"/><path d=\"M8.5 16h31v18.8q0 7.7-7.7 7.7H16.2q-7.7 0-7.7-7.7z\" stroke=\"#000\" stroke-width=\"2.8\" stroke-linejoin=\"round\"/></mask><mask id=\"c\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"48\" height=\"48\"><rect width=\"48\" height=\"48\" fill=\"#fff\"/><path d=\"M12.4 19.9h23.2v14.6q0 4.1-4.1 4.1h-15q-4.1 0-4.1-4.1z\" fill=\"none\" stroke=\"#000\" stroke-width=\"1.4\" stroke-dasharray=\"2.3 1.9\" stroke-linecap=\"round\"/></mask></defs><g fill=\"#f6efe8\"><g mask=\"url(#p)\"><path d=\"M10.5 19 C10.5 10.5 13.5 5.5 19 6.7 C15.7 8.5 15.1 12.5 16.5 19z\"/><path d=\"M19.5 19 C19.5 8.2 22.5 3.2 28 4.4 C24.7 6.2 24.1 10.2 25.5 19z\"/><path d=\"M28.5 19 C28.5 10.5 31.5 5.5 37 6.7 C33.7 8.5 33.1 12.5 34.5 19z\"/></g><path mask=\"url(#c)\" d=\"M8.5 16h31v18.8q0 7.7-7.7 7.7H16.2q-7.7 0-7.7-7.7z\"/></g></svg>\n"; document.title = 'pronto'; return; }
+
+  await Promise.all([Dati.carica(), Immagini.carica()]);
+  await document.fonts.ready;
+  const carte = ['2024:drago_rosso_adulto', '2024:goblin_guerriero', '2014:lich', '2024:orsogufo'].map(r => {
+    const m = Dati.trova(r); return Schede.carte(m, { formato: 'poker', immagine: true })[0];
+  });
+  // Area visiva: illustrazione sullo sfondo e ventaglio di carte che si adatta all'area
+  const CW = 238, CH = 333;   // carta poker a 96 dpi
+  const vis = (x, y, w, h, belvaId, n = 3) => {
+    const largh = CW + (n - 1) * 150 + 80, alt = CH + 60;
+    const sc = Math.min(h * .78 / alt, w * .92 / largh);
+    const ventaglio = carte.slice(0, n).map((c, k) => { const d = k - (n - 1) / 2;
+      return c.replace('style="--w', 'style="position:absolute;left:' + (d * 150 - CW / 2) + 'px;top:' + (-CH / 2 + Math.abs(d) * 16) + 'px;transform:rotate(' + d * 9 + 'deg);--w'); }).join('');
+    return '<div style="position:absolute;left:' + x + 'px;top:' + y + 'px;width:' + w + 'px;height:' + h + 'px">' +
+      (belvaId ? '<img class="belva" src="img/mostri/' + belvaId + '.webp" alt="" style="left:' + (w * .02) + 'px;top:' + (-h * .06) + 'px;width:' + (w * .96) + 'px;height:' + (h * 1.0) + 'px;object-fit:contain">' : '') +
+      '<div style="position:absolute;left:50%;top:' + (h * .58) + 'px;transform:scale(' + sc + ')">' + ventaglio + '</div></div>';
+  };
+  const testo = (x, y, w, conSotto = true, conPillole = true) => '<div class="testo" style="left:' + x + 'px;top:' + y + 'px;width:' + w + 'px">' + marchio + '<h1 style="margin-top:' + u * 1.1 + 'px">' + SLOGAN + '</h1>' + (conSotto ? '<p class="sotto">' + SOTTO + '</p>' : '') + (conPillole ? pillole : '') + '</div>';
+
+  let h = '';
+  const m = u * 2.2;
+  if (f === 'og')         h = testo(m, m * 1.3, W * .46, false, false) + vis(W * .5, 0, W * .5, H, 'drago_rosso');
+  if (f === 'x')          h = testo(m, H * .16, W * .5, false, false) + vis(W * .55, 0, W * .45, H, 'drago_rosso');
+  if (f === 'facebook')   h = testo(m * 1.4, H * .2, W * .48, false, true) + vis(W * .55, 0, W * .42, H, 'lich');
+  if (f === 'linkedin')   h = testo(m, H * .14, W * .55, false, false) + vis(W * .6, 0, W * .38, H, 'lich');
+  if (f === 'youtube')    h = testo(W * .22, H * .37, W * .32, false, true) + vis(W * .54, H * .33, W * .26, H * .34, 'drago_rosso');
+  if (f === 'post')       h = testo(m, m, W * .8, true, false) + vis(0, H * .5, W, H * .5, 'drago_rosso');
+  if (f === 'post-carte') h = testo(m, m, W * .85, false, false) + vis(0, H * .3, W, H * .7, null);
+  if (f === 'storia')     h = testo(m, H * .09, W * .84, true, true) + vis(0, H * .47, W, H * .5, 'drago_rosso');
+  if (f === 'pinterest')  h = testo(m, H * .06, W * .84, true, true) + vis(0, H * .46, W, H * .52, 'orsogufo');
+  tela.insertAdjacentHTML('beforeend', h);
+  await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
+  document.title = 'pronto';
+})();
+</script>
+</body>
+</html>
