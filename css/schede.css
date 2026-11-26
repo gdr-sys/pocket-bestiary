@@ -213,8 +213,12 @@
 .rt-nome small { font-size: calc(var(--w) * .036); color: var(--inchiostro); opacity: .75; }
 
 /* Illustrazione della scheda: si ingrandisce al passaggio e si apre con un clic */
-[data-ingrandisci] { cursor: zoom-in; position: relative; z-index: 1; transition: transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s; }
-.sm-fig[data-ingrandisci]:hover, .sm-fig[data-ingrandisci]:focus-visible { transform: scale(1.12); }
+[data-ingrandisci] { cursor: zoom-in; }
+.pk-fig[data-ingrandisci] { position: relative; transition: transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s; }
+/* Nella scheda niente transform sulla figura: creerebbe un livello a sé e la carta dell'incisione tornerebbe bianca */
+.sm-fig img { transition: max-height .4s cubic-bezier(.16, 1, .3, 1); }
+.sm-fig[data-ingrandisci]:hover img, .sm-fig[data-ingrandisci]:focus-visible img { max-height: 300px; }
+.sm-fig[data-ingrandisci]:focus-visible { outline: 2px solid var(--rosso, #7a2016); outline-offset: 4px; border-radius: 4px; }
 .pk-fig[data-ingrandisci]:hover, .pk-fig[data-ingrandisci]:focus-visible { transform: scale(1.9); transform-origin: 0 0; z-index: 5; box-shadow: 0 24px 50px -18px rgba(0,0,0,.6); }
 @media (prefers-reduced-motion: reduce) { [data-ingrandisci] { transition: none; } }
 @media print { .carta .ct { border-radius: 0; } }
