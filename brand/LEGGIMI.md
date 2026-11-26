@@ -1,6 +1,6 @@
 # Pocket Bestiary: file dell'identità
 
-Identità decisa il 2026-11-26. Terza app della famiglia di Pocket GM Screen (con Compendio Arcano).
+Identità decisa il 2026-11-26. Terza app della famiglia di Pocket GM Screen (con Pocket Grimoire).
 
 - **Nome:** Pocket Bestiary. Sotto l'icona del telefono: "Bestiary".
 - **Slogan:** «Tutti i mostri, in tasca.» / «Every monster, in your pocket.»

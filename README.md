@@ -5,7 +5,7 @@
 
 # Pocket Bestiary
 
-**Tutti i mostri, in tasca.** Le schede dei mostri di D&D 5e, edizioni 2014 e 2024, da sfogliare, trasformare e stampare. Fa parte della famiglia di [Pocket GM Screen](https://pocketgmscreen.pages.dev/) e Compendio Arcano.
+**Tutti i mostri, in tasca.** Le schede dei mostri di D&D 5e, edizioni 2014 e 2024, da sfogliare, trasformare e stampare. Fa parte della famiglia di [Pocket GM Screen](https://pocketgmscreen.pages.dev/) e Pocket Grimoire.
 
 ## Cosa fa
 
@@ -17,7 +17,7 @@
 | Homebrew | Editor con anteprima dal vivo: modificatori, PF dai dadi vita, competenze, Percezione passiva, PE e bonus di competenza calcolati da soli. Aiuto per scrivere gli attacchi nel formato 2014 o 2024. Stima del GS (difesa, attacco, media) |
 | Illustrazioni | Un'incisione originale in bianco e nero per i mostri più noti e per ogni tipo di creatura (generate con Gemini per l'app, nessuna immagine ufficiale). Si ingrandiscono al passaggio del mouse e si aprono in grande con un clic. Ognuno può caricare la propria immagine per qualsiasi mostro |
 | Mazzo | Cinque formati: Mini 44×63 (16 per A4), Poker 63×88 (9), Tarocchi 70×120 (4), Grande 95×133 (4), Scheda A5 148×210 (1). Illustrazione sul fronte, sul retro, su entrambi o nessuna; altezza e inquadratura regolabili per ogni mostro. Cornice colorata per tipo, segni di taglio, retro specchiato per il fronte-retro. Il testo lungo si rimpicciolisce e, se serve, continua su altre carte spezzandosi tra due frasi |
-| Account | Facoltativo, lo stesso di Compendio Arcano (Google o email): mostri homebrew con le loro immagini, mazzo, preferenze e inquadrature si ritrovano su ogni dispositivo |
+| Account | Facoltativo, lo stesso di Pocket Grimoire (Google o email): mostri homebrew con le loro immagini, mazzo, preferenze e inquadrature si ritrovano su ogni dispositivo |
 | Al tavolo | Ogni formula di dadi nella scheda si tira con un tocco. Confronto 2014/2024 dello stesso mostro. Copia della scheda come testo |
 | Dati | Tutto resta sul dispositivo (localStorage). I mostri homebrew si salvano e si ricaricano da un file JSON |
 | App installabile | Funziona anche senza internet dopo la prima apertura |
@@ -38,7 +38,7 @@ Prima di pubblicare:
 - metti l'indirizzo completo nelle meta `og:image` e `twitter:image` di `index.html` (i social vogliono l'URL assoluto);
 - dopo aver aggiunto illustrazioni in `img/mostri/`, lancia `node scripts/indice-immagini.js`.
 
-Le regole del database sono in `firestore.rules` (pubblicate il 2026-11-26 nel progetto `compendio-arcano-431f9`, insieme a quelle di Compendio Arcano).
+Le regole del database sono in `firestore.rules` (pubblicate il 2026-11-26 nel progetto `compendio-arcano-431f9`, insieme a quelle di Pocket Grimoire).
 
 ## Struttura
 

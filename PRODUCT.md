@@ -16,7 +16,7 @@ Pocket Bestiary trasforma le schede dei mostri SRD in quello che serve stasera: 
 
 ## Positioning
 
-Il bestiario in italiano che cambia il GS con un tocco e stampa le carte. Terza app della famiglia di Pocket GM Screen (campagna) e Compendio Arcano (carte incantesimo). Gratuita.
+Il bestiario in italiano che cambia il GS con un tocco e stampa le carte. Terza app della famiglia di Pocket GM Screen (campagna) e Pocket Grimoire (carte incantesimo). Gratuita.
 
 ## Operating Context
 

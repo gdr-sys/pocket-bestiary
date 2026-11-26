@@ -1,11 +1,11 @@
 rules_version = '2';
-// Regole di Firebase (progetto compendio-arcano-431f9) per Compendio Arcano e Pocket Bestiary.
+// Regole di Firebase (progetto compendio-arcano-431f9) per Pocket Grimoire e Pocket Bestiary.
 // Da incollare in Firebase > Firestore > Regole AL POSTO di quelle attuali: contengono anche le
-// regole di Compendio Arcano, invariate. Ognuno legge e scrive solo i propri dati.
+// regole di Pocket Grimoire, invariate. Ognuno legge e scrive solo i propri dati.
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // ── Compendio Arcano (invariato) ──
+    // ── Pocket Grimoire (invariato) ──
     match /utenti/{uid}/incantesimi/{id} {
       allow read, delete: if request.auth != null && request.auth.uid == uid;
       allow write: if request.auth != null && request.auth.uid == uid

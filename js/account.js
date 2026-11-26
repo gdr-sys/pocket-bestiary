@@ -1,13 +1,13 @@
 /* Pocket Bestiary — © 2026 Noemi Marcolini. Tutti i diritti riservati. Vedi LICENSE. */
 /* ============================================================
-   ACCOUNT.JS — Accesso facoltativo, come in Compendio Arcano.
+   ACCOUNT.JS — Accesso facoltativo, come in Pocket Grimoire.
    Senza accesso tutto resta nel browser. Con l'accesso (Google o
    email) i mostri homebrew, il mazzo, le inquadrature e le
    preferenze si salvano anche online e si ritrovano ovunque.
    Firebase si scarica solo quando serve (accesso già fatto o
    pannello aperto), così l'app resta veloce e funziona offline.
 
-   Dati online (stesso progetto Firebase di Compendio Arcano,
+   Dati online (stesso progetto Firebase di Pocket Grimoire,
    stesso account per tutte le app della famiglia):
      utenti/{uid}/bestiario/{id}        { j: JSON del mostro, agg }  oppure  { del: true, agg }
      utenti/{uid}/bestiario_dati/stato  { j: JSON di mazzo, preferenze e inquadrature, agg }
