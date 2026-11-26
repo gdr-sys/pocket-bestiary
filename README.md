@@ -34,7 +34,7 @@ poi apri `http://localhost:8080`. Si pubblica così com'è su GitHub Pages, Clou
 
 Prima di pubblicare:
 
-- aggiungi il dominio in Firebase > Authentication > Impostazioni > Domini autorizzati, altrimenti l'accesso con Google non parte;
+- pubblicata su Cloudflare Pages (https://pocket-bestiary.pages.dev), collegata a questo repository: ogni invio su `main` aggiorna il sito; il dominio è autorizzato in Firebase. Un dominio nuovo va aggiunto in Firebase > Authentication > Impostazioni > Domini autorizzati;
 - metti l'indirizzo completo nelle meta `og:image` e `twitter:image` di `index.html` (i social vogliono l'URL assoluto);
 - dopo aver aggiunto illustrazioni in `img/mostri/`, lancia `node scripts/indice-immagini.js`.
 
