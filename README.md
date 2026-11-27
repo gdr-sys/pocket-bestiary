@@ -5,7 +5,7 @@
 
 # Pocket Bestiary
 
-**Tutti i mostri, in tasca.** Le schede dei mostri di D&D 5e, edizioni 2014 e 2024, da sfogliare, trasformare e stampare. Fa parte della famiglia di [Pocket GM Screen](https://pocketgmscreen.pages.dev/) e Pocket Grimoire.
+**Tutti i mostri, in tasca.** Le schede dei mostri di D&D 5e, edizioni 2014 e 2024, da sfogliare, trasformare e stampare. Fa parte della famiglia di [Pocket GM Screen](https://pocketgmscreen.pages.dev/) e [Pocket Grimoire](https://pocket-grimoire.pages.dev/).
 
 ## Cosa fa
 
