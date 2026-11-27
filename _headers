@@ -20,5 +20,10 @@
 /img/*
   Cache-Control: public, max-age=604800
 
+# L'indice delle illustrazioni cambia a ogni aggiornamento: sempre controllato
+/img/mostri/indice.json
+  ! Cache-Control
+  Cache-Control: no-cache
+
 /data/*
   Cache-Control: public, max-age=86400

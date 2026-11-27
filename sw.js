@@ -1,5 +1,5 @@
 /* Pocket Bestiary — copia locale per l'uso senza internet. Cambia VERSIONE a ogni rilascio. */
-const VERSIONE = 'pb-6';
+const VERSIONE = 'pb-7';
 const FILE = ['./', 'index.html', 'css/caratteri.css', 'css/app.css', 'css/schede.css',
   'js/testi.js', 'js/gs.js', 'js/dati.js', 'js/immagini.js', 'js/account.js', 'js/schede.js', 'js/editor.js', 'js/mazzo.js', 'js/app.js',
   'data/mostri-2014.json', 'data/mostri-2024.json', 'icons/favicon.svg', 'img/scene/bestiario.webp', 'img/scene/crea.webp', 'img/scene/mazzo.webp', 'manifest.webmanifest'];

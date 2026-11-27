@@ -10,7 +10,7 @@
    ============================================================ */
 
 const Immagini = (() => {
-  let indice = new Set();
+  let indice = new Set(), ver = '';
   const proprie = new Map();   // ref → objectURL
   const DB = 'pb_immagini', STORE = 'img';
 
@@ -26,7 +26,8 @@ const Immagini = (() => {
   };
 
   const carica = async () => {
-    try { indice = new Set(await fetch('img/mostri/indice.json').then(r => r.json())); } catch (e) { indice = new Set(); }
+    // indice.json porta una versione: finisce nell'indirizzo delle immagini, così chi le ha in cache vede subito quelle nuove
+    try { const j = await fetch('img/mostri/indice.json', { cache: 'no-cache' }).then(r => r.json()); const l = Array.isArray(j) ? j : j.l; ver = Array.isArray(j) ? '' : '?v=' + j.v; indice = new Set(l); } catch (e) { indice = new Set(); }
     // Le immagini proprie non devono mai bloccare l'avvio: al massimo 2 secondi
     const attesa = new Promise(ok => setTimeout(ok, 2000));
     try {
@@ -53,10 +54,10 @@ const Immagini = (() => {
     if (ref && proprie.has(ref)) return { src: proprie.get(ref), propria: true };
     if (m.immagine) return { src: m.immagine, propria: true };
     const o = m.origine || m._origine; const ids = [m.id, famiglia(m.id), o, o && famiglia(o)].filter(Boolean);
-    for (const id of ids) if (indice.has(id)) return { src: 'img/mostri/' + id + '.webp' };
+    for (const id of ids) if (indice.has(id)) return { src: 'img/mostri/' + id + '.webp' + ver };
     const tb = Dati.tipoBase(m.tipo);
     const nomeTipo = TIPO_FILE[T.normal(tb).replace(/^./, c => c.toUpperCase())] || TIPO_FILE[tb] || slugTipo(tb);
-    if (indice.has('tipo-' + nomeTipo)) return { src: 'img/mostri/tipo-' + nomeTipo + '.webp', generica: true };
+    if (indice.has('tipo-' + nomeTipo)) return { src: 'img/mostri/tipo-' + nomeTipo + '.webp' + ver, generica: true };
     return null;
   };
 
